@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddef.h>
+
 /**
 * _strcpy - copies string
 *@dest: destination array
