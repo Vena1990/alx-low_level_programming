@@ -17,7 +17,7 @@ if (s == NULL)
 printf("failed\n");
 return (1);
 }
-Printf("%s\n", s);
+printf("%s\n", s);
 free(s);
 return (0);
 }
