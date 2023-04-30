@@ -1,24 +1,30 @@
-#include <stdio.h>
-#include <stdard.h>
+#include "variadic_functions.h"
+#include <stdarg.h>
 
-double average(int count, ...)
-{
 
-va_list ap;
-int i;
-double sum = 0;
+	/**
+	 * sum_them_all - Returns the sum of all its paramters.
+	 * @n: The number of paramters passed to the function.
+	 * @...: A variable number of paramters to calculate the sum of.
+	 *
+	 * Return: If n == 0 - 0.
+	 *         Otherwise - the sum of all parameters.
+	 */
+	int sum_them_all(const unsigned int n, ...)
+	{
+		va_list ap;
+		unsigned int i, sum = 0;
 
-va_start(ap, count);
-for (i = 0; i< count; i++
-sum =+ va_arg(ap, double);
-}
-int main()
-{
-double avg = average(3, 1.0, 2.0, 3.0);
-printf("The average is %.2f\n", avg);
 
-avg = average(5, 2.0, 4.0, 6.0, 8.0, 10.0);
-printf("The average is %.2f\n", avg);
+		va_start(ap, n);
 
-return 0;
-}
+
+		for (i = 0; i < n; i++)
+			sum += va_arg(ap, int);
+
+
+		va_end(ap);
+
+
+		return (sum);
+	}
